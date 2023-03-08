@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "./styles/Button"
 
 const Contact = () => {
   const Wrapper = styled.section`
@@ -63,7 +64,9 @@ const Contact = () => {
             rows="10"
             required
             autoComplete="off"
-            placeholder="Enter you message"></textarea>
+            placeholder="Enter you message"
+          ></textarea>
+          <input type="submit" value="send" />
         </form>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
 import Products from "./Products";
@@ -10,6 +10,7 @@ import Error from "./Error";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import Header from "./component/Header";
+import Footer from "./component/Footer";
 
 const App = () => {
   const theme = {
@@ -38,7 +39,7 @@ const App = () => {
   };
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <Router>
         <GlobalStyle />
         <Header />
         <Routes>
@@ -50,7 +51,8 @@ const App = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<Error />} />
         </Routes>
-      </BrowserRouter>
+        <Footer />
+      </Router>
     </ThemeProvider>
   )
 };

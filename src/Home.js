@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import FeatureProduct from './component/FeatureProduct';
 import HeroSection from './component/HeroSection';
 import Services from './component/Services';
 import Trusted from './component/Trusted';
@@ -11,6 +12,7 @@ const Home = () => {
   return (
     <Wrapper>
       <HeroSection myData={data} />
+      <FeatureProduct />
       <Services />
       <Trusted />
     </Wrapper>
@@ -20,5 +22,5 @@ const Home = () => {
 export default Home;
 
 const Wrapper = styled.section`
-height: 100vh;
+/* height: 100vh; */
 `;
