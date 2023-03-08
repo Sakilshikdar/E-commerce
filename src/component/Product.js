@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import FeatureProduct from './FeatureProduct';
+import FormatPrice from '../helper/FormatPrice';
 
 const Product = (curElem) => {
     const { id, name, price, category, image } = curElem;
@@ -15,7 +16,7 @@ const Product = (curElem) => {
                     <div className="card-data-flex">
                         <h3>{name}</h3>
                         <p className="card-data--price">
-                            {price}
+                            <FormatPrice price={price} />
                         </p>
                     </div>
                 </div>
