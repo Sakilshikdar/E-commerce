@@ -8,6 +8,8 @@ import Container from "./styles/Container";
 import FormatPrice from "./helper/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbReplace, TbTruckDelivery } from "react-icons/tb";
+import Start from "./component/Start";
+import AddToCart from "./component/AddToCart";
 
 const API = `https://api.pujakaitem.com/api/products`
 
@@ -29,7 +31,6 @@ const SingleProduct = () => {
     image,
   } = singleProduct;
 
-  console.log(image);
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`)
   }, [])
@@ -44,8 +45,7 @@ const SingleProduct = () => {
           {/* {product data} */}
           <div className="product-data">
             <h2>{name}</h2>
-            <p>{stars}</p>
-            <p>{reviews} reviews</p>
+            <Start star={stars} reviews={reviews} />
             <div className="product-data-price">
               MRP:
               <del>
@@ -86,9 +86,9 @@ const SingleProduct = () => {
               <p>ID: {alias}</p>
               <p>Brand :<span> {company} </span></p>
 
-
             </div>
-
+            <hr />
+            {stock > 0 && <AddToCart SingleProduct={SingleProduct} />}
           </div>
         </div>
       </Container>
