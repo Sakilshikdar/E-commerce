@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
 import { FaCheck } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components'
 import { useProductContext } from '../context/ProductContext';
+import { Button } from '../styles/Button';
 import CartAmountToggle from './CartAmountToggle';
 
 const AddToCart = () => {
@@ -48,6 +50,11 @@ const AddToCart = () => {
                 setIncrease={setIncrease}
                 setDecrease={setDecrease}
             />
+            <NavLink to="/cart">
+                <Button>
+                    Add To Cart
+                </Button>
+            </NavLink>
         </Wrapper>
     )
 }

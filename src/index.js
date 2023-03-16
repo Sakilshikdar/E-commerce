@@ -3,11 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { AppProvider } from "./context/ProductContext";
+import FilterContextProvider from "./context/Filter_Context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
     <AppProvider>
-        <App />
+        <FilterContextProvider>
+            <App />
+        </FilterContextProvider>
     </AppProvider>
 );
